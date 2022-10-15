@@ -2,6 +2,8 @@
   "name": "awesomeorganics",
   "version": "0.0.1",
   "description": "awesomeorganics",
+  "homepage": "https://awesomeorganics.azurewebsites.net/",
+  "home": "https://awesomeorganics.azurewebsites.net/",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
