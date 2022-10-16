@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "install": "npm install"
+    "post-install": "npm install"
   },
   "keywords": [],
   "author": "",
