@@ -31,8 +31,7 @@ app.set("view engine", "handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); //dont think my azure app is recognizing this static file. So what you need to do instead is  app.use(express.static(path.join(__dirname, "public")));  and then in your html file you need to add the path to the file. So instead of  <link rel="stylesheet" href="style.css">  you need to do  <link rel="stylesheet" href="/style.css">  and then it should work.
 
 app.use(require("./controllers/"));
 
