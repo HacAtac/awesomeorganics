@@ -7,7 +7,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
     "post-install": "npm install"
   },
   "keywords": [],
@@ -44,11 +43,6 @@
     "connect-session-sequelize": "^7.1.2",
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
-    "stripe": "^8.212.0",
-    "nodemon": "^2.0.13"
-  },
-  "devDependencies": {
-    "concurrently": "^6.2.2",
-    "nodemon": "^2.0.13"
+    "stripe": "^8.212.0"
   }
 }
