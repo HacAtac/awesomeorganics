@@ -48,7 +48,7 @@ jobs:
 
       - name: npm install
         run: |
-          npm post-install
+          npm run install
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp

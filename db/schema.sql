@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS project_two_db;
+DROP DATABASE IF EXISTS awesomeorganics;
 
-CREATE DATABASE project_two_db;
+CREATE DATABASE awesomeorganics;
