@@ -1,3 +1,75 @@
+.navBackground {
+  color: white !important;
+  border-bottom: 3px solid #e7e7e7;
+}
+
+.buttonsLeft a {
+  justify-content: space-around;
+  padding: 0 5px 0 5px;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: darkgreen;
+  font-size: 20px;
+}
+
+.buttonsLeft a:hover {
+  color: rgb(201, 167, 15);
+}
+
+.buttonsRight a {
+  justify-content: space-around;
+  padding: 0 5px 0 5px;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: darkgreen;
+  font-size: 20px;
+}
+
+.buttonsRight a:hover {
+  color: rgb(201, 167, 15);
+}
+
+.banner {
+  background: url("../img/hero.jpg") no-repeat center center;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+  position: relative;
+}
+.bannerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(179, 17, 17);
+  text-align: center;
+}
+#awsome {
+  color: darkgreen;
+  padding-left: 5px;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+  color: darkgreen;
+  background-color: darkgreen;
+  border-radius: 50%;
+}
+
+#logoHero {
+  width: 200px;
+  height: 200px;
+  color: darkgreen;
+  background-color: darkgreen;
+  border-radius: 50%;
+}
 #product-cards {
   display: flex;
   flex-wrap: wrap;
@@ -5,4 +77,61 @@
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
+}
+
+.imgLeft {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sectionOneText {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#sectionOne {
+  background-color: white;
+}
+
+#sectionTwo {
+  background-color: rgb(230, 231, 231);
+  border-bottom: 3px solid #e7e7e7;
+}
+
+#imageRight {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sectionTwoText {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }

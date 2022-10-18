@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product, User, Cart } = require("../models/");
+const { Product, User, Cart, Dynamic } = require("../models/");
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -8,7 +8,21 @@ const stripe = require("stripe")(
 );
 
 router.get("/", (req, res) => {
-  res.render("index");
+  Dynamic.findAll({
+    // include: [User],
+  })
+    .then((dbDynamicData) => {
+      // we need to get the dbDynamicData and get the heroImage from the object and save it to a variable
+      // then we need to pass that variable to the homepage
+      const heroImage = dbDynamicData[0].heroImage;
+
+      res.render("index", { heroImage });
+      console.log("dynamic", heroImage);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //get all products from database
@@ -20,7 +34,7 @@ router.get("/products", (req, res) => {
       const products = dbProductData.map((post) => post.get({ plain: true }));
 
       res.render("products", { products });
-      console.log(products);
+      console.log("products", products);
     })
     .catch((err) => {
       console.log(err);
