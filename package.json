@@ -7,6 +7,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "server": "nodemon server.js",
     "post-install": "npm install"
   },
   "keywords": [],
@@ -34,6 +35,7 @@
     "nodemailer": "^6.7.0",
     "path": "^0.12.7",
     "request": "^2.88.2",
+    "nodemon": "^2.0.15",
     "sequelize": "^6.9.0",
     "slugify": "^1.6.5",
     "uuid": "^8.3.2",
