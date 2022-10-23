@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const users = require("./usersroutes"); //this is the users route
 const products = require("./productsroutes"); //this is the products route
-//const orders = require("./routes/orders"); //this is the orders route
+const dynamic = require("./dynamicroutes"); //this is the dynamic route
 
-router.use("/users", users); // this will be the root of the users (/users) and will be handled by the users controller
+router.use("/users", users);
 router.use("/products", products);
+router.use("/dynamic", dynamic);
 
 module.exports = router;

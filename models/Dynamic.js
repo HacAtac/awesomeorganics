@@ -12,10 +12,13 @@ Dynamic.init(
       autoIncrement: true,
     },
 
-    imageArray: {
-      type: DataTypes.ARRAY,
+    heroImage: {
       type: DataTypes.STRING,
     },
+
+    // ImageArray: {
+    //   type: DataTypes.ARRAY(DataTypes.STRING),
+    // },
   },
   {
     sequelize,
