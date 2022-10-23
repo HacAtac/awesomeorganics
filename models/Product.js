@@ -25,6 +25,7 @@ Products.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+
     // img: {
     //   type: DataTypes.STRING,
     //   allowNull: true,

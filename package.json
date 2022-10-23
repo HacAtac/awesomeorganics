@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "post-install": "npm install"
+    "post-install": "npm install",
+    "seed": "node seeds/index.js"
   },
   "keywords": [],
   "author": "",
