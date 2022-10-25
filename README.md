@@ -13,6 +13,8 @@
 
 As a owner of a shop, this application will suport showcasing the products, creating and organizing the businesses. Accessability optimazation has been considerated in order to reach out to the customers who want to buy her products localy and globaly.
 
+Right now I'm doing some heavy refactor updates.
+
 ## Technologies
 
 - Server Side Rendering
