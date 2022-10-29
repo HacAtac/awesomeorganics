@@ -13,6 +13,10 @@
 
 As a owner of a shop, this application will suport showcasing the products, creating and organizing the businesses. Accessability optimazation has been considerated in order to reach out to the customers who want to buy her products localy and globaly.
 
+## Current Work
+
+I'm doing heavy UI updates on the the whole application. Once I finish those, I will be adding a shopping cart, and order page unique to a User.
+
 Right now I'm doing some heavy refactor updates.
 
 ## Technologies
