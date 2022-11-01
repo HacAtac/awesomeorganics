@@ -207,6 +207,11 @@
   height: 100%;
 }
 
+.productPhoto {
+  width: 100%;
+  height: auto;
+}
+
 .logo {
   width: 200px;
   height: 200px;
@@ -236,7 +241,12 @@
   }
 }
 
-/* media query for screens smaller than 667 x 857 that will take imgLeft and put it on top of the text */
+@media (max-width: 580px) {
+  #footerLogo {
+    display: none;
+  }
+}
+
 @media (max-width: 667px) {
   .imgLeft {
     flex-direction: column;
