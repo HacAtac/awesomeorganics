@@ -239,6 +239,11 @@
   height: 50px;
 }
 
+#registerLink {
+  color: rgb(226, 230, 19);
+  font-size: 20px;
+}
+
 #contactButtonContainer {
   display: flex;
   flex-direction: row;
@@ -246,6 +251,12 @@
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+#loginSection {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .logo {

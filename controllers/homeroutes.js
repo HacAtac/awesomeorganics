@@ -59,6 +59,10 @@ router.get("/login", (req, res) => {
   res.render("registration");
 });
 
+router.get("/register", (req, res) => {
+  res.render("login");
+});
+
 router.get("/contact_me", (req, res) => {
   res.render("contact");
 });

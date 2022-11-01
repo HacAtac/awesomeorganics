@@ -1,18 +1,10 @@
 {{> boilerplate }}
 {{> nav }}
 
-<div class="container mx-auto px-4">
-  <div class="flex flex-wrap">
-    <div class="w-full md:w-full px-3">
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="flex justify-center">
-          <img src="/img/logo.jpg" alt="aw-some logo" class="rounded h-75 w-full">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+ <h1 id="contactHeader" class="text-left pt-4 pb-4 text-4xl font-bold text-teal-600">Login</h1>
+  <p class="text-center text-2xl font-bold text-teal-600">Welcome back, we're happy to see you.</p>
+        <p class="text-center pb-2 text-1xl font-bold text-teal-500">Please login below or click the register now button below form to register.</p>
+<section id="loginSection">
 <form class="login-form container mx-auto px-4">
   <div class="flex flex-wrap">
     <div class="w-full md:w-full px-3">
@@ -30,48 +22,14 @@
         <button
           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit">login</button>
+        <p class="text-center pt-4 text-1xl font-bold text-teal-500">Don't have an account? <a id="registerLink" href="/register">Register now</a></p>
       </div>
     </div>
   </div>
 </form>
+</section>
 
-<form class="signup-form container mx-auto px-4">
-  <div class="flex flex-wrap">
-    <div class="w-full md:w-full px-3">
-      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          for="firstName">First Name:</label>
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          type="text" id="firstName" />
-        
-        <label
-          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          for="lastName">Last Name:</label>
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          type="lastName" id="lastName" />
-       
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          for="email">email:</label> 
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          type="text" id="email" />
-        
-          
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          for="password-signup">password:</label>
-        <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          type="pwd" id="password" />
-        
-        <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit">signup</button>
-      </div>
-    </div>
-  </div>
-</form> 
+
 
 
 
@@ -82,4 +40,4 @@
 {{> footer }}
 <!--script for login.js-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="/javascript/login.js"></script>
+<script src="/javascript/registration.js"></script>
