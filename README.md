@@ -83,7 +83,7 @@ Have a quality README (with unique name, description, technologies used, screens
 
 ## Deployed Application
 
-https://awsomeorganics.herokuapp.com/
+https://awesomeorganics.azurewebsites.net/
 
 ## Languages
 
@@ -105,10 +105,10 @@ SO THAT I can learn more about the owners organic products and possibly make a p
 
 ## Features
 
-![image](https://user-images.githubusercontent.com/87884472/142798748-7b6e81ed-2836-4e8f-b735-e350df7512a8.png)
+![image](https://user-images.githubusercontent.com/87215152/200019656-157693e3-dbfa-4bf9-9c6a-4cdb7a5d6bd9.png)
 
-![image](https://user-images.githubusercontent.com/87884472/142798815-a6e898a3-1ae1-413f-a49d-e0204428e512.png)
+![image](https://user-images.githubusercontent.com/87215152/200019816-abcb324b-1a3e-4a29-a628-148972732ce0.png)
 
-![image](https://user-images.githubusercontent.com/87884472/142800534-9a832f82-3cb6-4419-93d6-fef9c8f692df.png)
+![image](https://user-images.githubusercontent.com/87215152/200019976-c7e206f1-2455-4b01-bece-1194801ba3fc.png)
 
-![image](https://user-images.githubusercontent.com/87884472/142798842-2f462f87-8734-484b-8847-b41cdbb40769.png)
+![image](https://user-images.githubusercontent.com/87215152/200020079-4a4cb3f4-4820-4625-91fd-b39ba3702900.png)
