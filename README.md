@@ -13,7 +13,7 @@
 
 ## Current Work
 
-I'm doing heavy UI updates on the the whole application. Once I finish those, I will be adding a shopping cart, and order page unique to a User. I haven't decided if I'm going to stick with sessions or just use JWT for Auth
+I'm doing heavy UI updates on the the whole application. Once I finish those, I will be adding a shopping cart, and order page unique to a User. I haven't decided if I'm going to stick with sessions or just use JWT for Auth but will handle things like Authentication for users, protected routes based on roles etc..
 
 ## Technologies
 
