@@ -97,8 +97,18 @@
   align-items: center;
   width: 100px;
   height: 100px;
-  color: rgb(201, 167, 15);
+  color: rgb(2, 43, 30);
   font-size: 20px;
+  font-weight: 900;
+}
+#cartIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#order-history {
+  color: rgb(201, 167, 15);
 }
 
 .imgRight {
