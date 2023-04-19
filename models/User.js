@@ -5,7 +5,7 @@ const sequelize = require("../config/connection");
 // create our User model
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.pwd);
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -18,16 +18,9 @@ User.init(
       primaryKey: true,
       allowNull: false,
     },
-
-    firstName: {
+    fullName: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {},
-    },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {},
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -37,30 +30,36 @@ User.init(
         isEmail: true,
       },
     },
-    pwd: {
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [4],
       },
     },
-
     role: {
       type: DataTypes.ENUM("user", "admin"),
       defaultValue: "user",
     },
   },
-
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
-        newUserData.pwd = await bcrypt.hash(newUserData.pwd, 10);
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-
+      // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
-        updatedUserData.pwd = await bcrypt.hash(updatedUserData.pwd, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },
