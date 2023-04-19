@@ -1,7 +1,5 @@
 // Get the Submit button from the DOM
 const submitBtn = document.querySelector("#contactButton");
-console.log("CLICKED &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-
 // Add an event listener to the button
 submitBtn.addEventListener("click", (event) => {
   // Prevent the default behavior of the button
