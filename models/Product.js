@@ -1,10 +1,16 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Product extends Model {}
 
 Product.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,28 +18,25 @@ Product.init(
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
     },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {},
     },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-
-    // img: {
+    // image: {
     //   type: DataTypes.STRING,
-    //   allowNull: true,
-    //   validate: {},
+    //   allowNull: false,
     // },
   },
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    modelName: "Product",
   }
 );
 
