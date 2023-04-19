@@ -1,4 +1,4 @@
-//async function to handle logout
+// Async function to handle logout
 async function logout() {
   const response = await fetch("/api/auth/logout", {
     method: "post",
@@ -6,10 +6,14 @@ async function logout() {
   });
 
   if (response.ok) {
-    document.location.replace("/"); //redirect to home page
+    document.location.replace("/"); // Redirect to home page
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector("#logout").addEventListener("click", logout);
+// Add event listener to the element with the ID "logout"
+document.querySelector("#logout").addEventListener("click", (event) => {
+  event.preventDefault(); // Prevent default behavior of the link
+  logout(); // Call the logout function
+});
