@@ -1,12 +1,7 @@
 const router = require("express").Router();
 const { Product, User, Cart, Dynamic } = require("../models/");
 const db = require("../models");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
 //import my hero.jpg image from public/img/hero.jpg
-
-const stripe = require("stripe")(
-  "sk_test_51KGGcjDQw3iOHoMjf3YITBwKINTnXK3bur0cgCPuh60dD993ZmOU4Tqoy33u52gPG3usHBJpeZnvJBHuQtUxRK5O00WkMZpfof"
-);
 
 router.get("/", (req, res) => {
   Dynamic.findAll({
