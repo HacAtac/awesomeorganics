@@ -2,6 +2,7 @@ const { Product } = require("../models");
 
 const productdata = [
   {
+    id: 1,
     name: "Chapstick",
     // category_id: 1,
     description:
@@ -10,6 +11,7 @@ const productdata = [
     price: 3.5,
   },
   {
+    id: 2,
     name: "Hand Sanitizer",
     // category_id: 2,
     description:
@@ -18,6 +20,7 @@ const productdata = [
     price: 15,
   },
   {
+    id: 3,
     name: "Beeswax Candle",
     // category_id: 3,
     description: "Handmade beeswax candle that is 100% organic.",
@@ -25,6 +28,7 @@ const productdata = [
     price: 12,
   },
   {
+    id: 4,
     name: "Essential Oils",
     // category_id: 4,
     description: "Handmade essential oils that are 100% organic.",
@@ -32,6 +36,7 @@ const productdata = [
     price: 35,
   },
   {
+    id: 5,
     name: "Moisturizer",
     // category_id: 5,
     description: "Handmade moisturizer that is 100% organic.",
@@ -39,6 +44,7 @@ const productdata = [
     price: 35,
   },
   {
+    id: 6,
     name: "Bundle",
     // category_id: 6,
     description:

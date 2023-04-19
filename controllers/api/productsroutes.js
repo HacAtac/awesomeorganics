@@ -1,8 +1,5 @@
 const router = require("express").Router();
 const { Product } = require("../../models/");
-const stripe = require("stripe")(
-  "sk_test_51KGGcjDQw3iOHoMjf3YITBwKINTnXK3bur0cgCPuh60dD993ZmOU4Tqoy33u52gPG3usHBJpeZnvJBHuQtUxRK5O00WkMZpfof"
-);
 
 //TODO create a route to get all products
 router.get("/", (req, res) => {
@@ -31,13 +28,15 @@ router.get("/:id", (req, res) => {
     },
   })
     .then((dbProductData) => {
-     // Check if any products were found
-          if (!dbProductData) {
-            res.status(404).json({ message: `No product found with id ${req.params.id}`});
-            return; // Return to prevent further execution
-          }
-          // Send the found products as JSON
-          res.json(dbProductData);
+      // Check if any products were found
+      if (!dbProductData) {
+        res
+          .status(404)
+          .json({ message: `No product found with id ${req.params.id}` });
+        return; // Return to prevent further execution
+      }
+      // Send the found products as JSON
+      res.json(dbProductData);
     })
     .catch((err) => {
       console.log(err);
@@ -92,6 +91,5 @@ router.delete("/:id", async (req, res) => {
     res.status(400).send(err);
   }
 });
-
 
 module.exports = router;
