@@ -1,62 +1,44 @@
-// here I need to capture the form data from the signup form and send it to the server
-const signupForm = document.querySelector(".signup-form");
-signupForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const firstName = document.querySelector("#firstName").value.trim();
-  const lastName = document.querySelector("#lastName").value.trim();
-  const email = document.querySelector("#email").value.trim();
-  const pwd = document.querySelector("#password").value.trim();
-
-  if (firstName && lastName && email && pwd) {
-    fetch("/api/users", {
-      method: "post",
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        pwd,
-      }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      //will redirect to login page
-      console.log(response); //this will console log the response
-      //if signup is successful alert user
-      if (response.ok) {
-        window.alert("Signup successful");
-      } else {
-        alert(response.statusText);
-      }
-    });
-  }
-});
-
-//----------------------------------------------------------------------------------------------------------------------//
-//Now I need to do the same but for the login form
+// Select the login form
 const loginForm = document.querySelector(".login-form");
-loginForm.addEventListener("submit", (event) => {
+
+// Add event listener to the login form's submit event
+loginForm.addEventListener("submit", async (event) => {
+  // Prevent the default form submission behavior
   event.preventDefault();
-  const email = document.querySelector("#email").value.trim();
-  const password = document.querySelector("#password").value.trim();
 
-  if (email && password) {
-    fetch("/api/users/login", {
-      method: "post",
-      body: JSON.stringify({
-        email: email,
-        pwd: password,
-      }),
+  // Get the values entered by the user
+  const username = document.querySelector("#login-username").value;
+  const password = document.querySelector("#password-login").value;
 
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      // console.log(email, password);
-      //will redirect to login page
-      // console.log(response); //this will console log the response
-      //if signup is successful alert user
-      if (response.ok) {
-        window.alert("Login successful");
-      } else {
-        alert(response.statusText);
-      }
+  // Create the login data object
+  const loginData = {
+    username,
+    password,
+  };
+
+  try {
+    // Send a POST request to the login endpoint with the login data
+    const response = await fetch("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+
+    // Parse the response
+    const responseData = await response.json();
+
+    if (response.ok) {
+      console.log(responseData);
+      // Login was successful, redirect to the desired page
+      window.location.href = "/";
+    } else {
+      // Display an error message to the user
+      alert(responseData.message || "Error logging in. Please try again.");
+    }
+  } catch (error) {
+    // Handle any network or server errors
+    alert("An error occurred. Please try again.");
   }
 });

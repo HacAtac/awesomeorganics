@@ -8,13 +8,12 @@ router.get("/", (req, res) => {
     // include: [User],
   })
     .then((dbDynamicData) => {
-      // we need to get the dbDynamicData and get the heroImage from the object and save it to a variable
-      // then we need to pass that variable to the homepage
-      //const heroImage = dbDynamicData[0].heroImage;
       const heroImage = "../public/img/hero.jpg";
 
-      res.render("index", { heroImage });
-      console.log("dynamic", heroImage);
+      // Check if the user is logged in by checking the session
+      const isLoggedIn = req.session && req.session.user_id;
+      const username = isLoggedIn ? req.session.username : null;
+      res.render("index", { isLoggedIn, username, heroImage });
     })
     .catch((err) => {
       console.log(err);
@@ -30,8 +29,10 @@ router.get("/products", (req, res) => {
     .then((dbProductData) => {
       const products = dbProductData.map((post) => post.get({ plain: true }));
 
-      res.render("products", { products });
-      console.log("products", products);
+      // Check if the user is logged in by checking the session
+      const isLoggedIn = req.session && req.session.user_id;
+      const username = isLoggedIn ? req.session.username : null;
+      res.render("products", { isLoggedIn, username, products });
     })
     .catch((err) => {
       console.log(err);
@@ -60,8 +61,15 @@ router.get("/register", (req, res) => {
   res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+  res.render("index");
+});
+
 router.get("/contact_me", (req, res) => {
-  res.render("contact");
+  // Check if the user is logged in by checking the session
+  const isLoggedIn = req.session && req.session.user_id;
+  const username = isLoggedIn ? req.session.username : null;
+  res.render("contact", { isLoggedIn, username });
 });
 
 router.get("/privacy", (req, res) => {

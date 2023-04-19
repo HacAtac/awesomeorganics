@@ -1,9 +1,7 @@
-<!--landing page with nav bar and 100% width hero image that shows products and an about me section that tells you story of business idea-->
 <div class="navBackground">
   <div class="container mx-auto px-4">
     <nav class="flex items-center justify-between flex-wrap bg-white-800 p-6">
       <div class="flex items-center flex-shrink-0 text- mr-6">
-        {{!-- icon of an organic leaf --}}
         <img id="logo" src="https://img.icons8.com/ios/50/000000/organic-food.png" alt="organic leaf icon" />
         <span id="awsome"class="font-bold text-xl tracking-tight bg-green">AW-SOME</span>
       </div>
@@ -21,11 +19,13 @@
         </div>
       </div>
 
-      <div class="buttonsRight">
-          <a href="/login"
-            class="">Login</a>
-              {{!-- <a href="/signup"
-                class="">Sign Up</a> --}}
+       <div class="buttonsRight">
+        {{#if isLoggedIn}}
+          <span id="test">Welcome {{username}}</span>
+          <a href="/logout" class="">Logout</a>
+        {{else}}
+          <a href="/login" class="">Login</a>
+        {{/if}}
       </div>
       
     

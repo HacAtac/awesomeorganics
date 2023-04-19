@@ -51,8 +51,9 @@ router.post("/login", async (req, res) => {
     }
     // Set the user's ID in the session
     req.session.user_id = user.id;
+    req.session.username = user.username;
     // Send a success response
-    res.status(200).json({ message: `Welcome ${user.username}!` });
+    res.status(200).json({ user });
   } catch (err) {
     console.log("Error logging in a user", err);
     res.status(500).json(err);
