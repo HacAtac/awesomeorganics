@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Product, User, Cart, Dynamic } = require("../models/");
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+//import my hero.jpg image from public/img/hero.jpg
 
 const stripe = require("stripe")(
   "sk_test_51KGGcjDQw3iOHoMjf3YITBwKINTnXK3bur0cgCPuh60dD993ZmOU4Tqoy33u52gPG3usHBJpeZnvJBHuQtUxRK5O00WkMZpfof"
@@ -14,7 +15,8 @@ router.get("/", (req, res) => {
     .then((dbDynamicData) => {
       // we need to get the dbDynamicData and get the heroImage from the object and save it to a variable
       // then we need to pass that variable to the homepage
-      const heroImage = dbDynamicData[0].heroImage;
+      //const heroImage = dbDynamicData[0].heroImage;
+      const heroImage = "../public/img/hero.jpg";
 
       res.render("index", { heroImage });
       console.log("dynamic", heroImage);
