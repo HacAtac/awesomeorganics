@@ -6,7 +6,7 @@
   "home": "https://awesomeorganics.azurewebsites.net/",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "post-install": "npm install",
     "seed": "node seeds/index.js"
