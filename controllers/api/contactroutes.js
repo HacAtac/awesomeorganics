@@ -1,19 +1,22 @@
 const router = require("express").Router();
 const { Contact } = require("../../models/");
+const { sendEmailToAdmin } = require("../../utils/sendEmailToAdmin");
 
-//TODO: Create POST contact endpoint
 router.post("/", (req, res) => {
   Contact.create({
     ...req.body,
   })
     .then((dbUserData) => {
+      // Send the email to the admin before sending the response to the client
+      sendEmailToAdmin(req.body);
+      // Send the response to the client
       res.status(200).json(dbUserData);
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-}); // Add closing parenthesis and curly brace here
+});
 
 //TODO: Create GET contacts endpoint
 router.get("/", (req, res) => {
