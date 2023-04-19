@@ -111,6 +111,13 @@
   color: rgb(201, 167, 15);
 }
 
+#cartText {
+  color: rgb(201, 167, 15);
+  font-size: 1.25em;
+  font-weight: 900;
+  margin: auto;
+}
+
 .imgRight {
   padding-left: 25px;
   padding-right: 25px;

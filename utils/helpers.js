@@ -18,4 +18,7 @@ module.exports = {
       .split("/")[0]
       .split("?")[0];
   },
+  multiply: (a, b) => {
+    return a * b;
+  },
 };
