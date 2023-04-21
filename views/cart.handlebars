@@ -17,7 +17,7 @@
     <tbody>
       {{!-- Loop through each cart item --}}
       {{#each cartItems}}
-      <tr class="border-t border-teal-600 bg-white hover:bg-gray-100 transition duration-150">
+      <tr class="border-t border-teal-600 bg-white hover:bg-gray-100 transition duration-150" data-product-id="{{this.Product.id}}">
         <td class="px-4 py-3 text-center">{{this.Product.name}}</td>
         <td class="px-4 py-3 text-center">${{this.Product.price}}</td>
         <td class="px-4 py-3 text-center">
@@ -46,3 +46,4 @@
 <script src="/css/index.css"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <script src="/javascript/cart.js"></script>
+<script src="/javascript/checkoutButton.js"></script>

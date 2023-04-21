@@ -1,5 +1,12 @@
 const router = require("express").Router();
-const { Product, User, Cart, Dynamic } = require("../models/");
+const {
+  Product,
+  User,
+  Order,
+  OrderItem,
+  Cart,
+  Dynamic,
+} = require("../models/");
 const db = require("../models");
 const { withAuth } = require("../middleware/protect.js");
 //import my hero.jpg image from public/img/hero.jpg
@@ -64,6 +71,34 @@ router.get("/register", (req, res) => {
 
 router.get("/logout", (req, res) => {
   res.render("index");
+});
+
+router.get("/orders", withAuth, async (req, res) => {
+  try {
+    const UserId = req.session.user_id;
+    const username = req.session.username;
+
+    // Query the database for the user's order history
+    const orders = await Order.findAll({
+      where: { UserId },
+      include: {
+        model: OrderItem,
+        include: {
+          model: Product,
+          as: "Product", // Specify the alias
+        },
+      },
+    });
+
+    // Convert the orders data to a plain object
+    const ordersData = orders.map((order) => order.get({ plain: true }));
+
+    // Render the orders view and pass the orders data
+    res.render("orders", { isLoggedIn: true, username, orders: ordersData });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 router.get("/cart", withAuth, async (req, res) => {

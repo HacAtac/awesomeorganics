@@ -1,0 +1,49 @@
+{{> nav }}
+{{> boilerplate }}
+
+<div class="container mx-auto px-4 mt-6">
+  <h1 class="text-center text-4xl font-bold text-teal-600 mb-4">{{username}}'s Order History</h1>
+
+  {{#each orders}}
+  <div class="border border-teal-600 shadow-lg mb-6">
+    <div class="bg-teal-500 text-white px-4 py-3">
+      <p>Order ID: {{this.id}}</p>
+      <p>Order Date: {{format_date this.orderDate}}</p>
+      <p>Payment Status: {{this.paymentStatus}}</p>
+      <p>Total Amount: ${{this.totalAmount}}</p>
+      {{#if_eq this.paymentStatus "Unpaid"}}
+      <button class="complete-order-button bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded" data-id="{{this.id}}">Complete Order</button>
+      {{/if_eq}}
+    </div>
+    <div class="px-4 py-3">
+      <table class="w-full border-collapse border border-teal-600 shadow-lg">
+        <thead class="bg-teal-400 text-white">
+          <tr>
+            <th class="px-4 py-3">Product</th>
+            <th class="px-4 py-3">Price</th>
+            <th class="px-4 py-3">Quantity</th>
+            <th class="px-4 py-3">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this.OrderItems}}
+          <tr class="border-t border-teal-600 bg-white hover:bg-gray-100 transition duration-150">
+            <td class="px-4 py-3 text-center">{{this.Product.name}}</td>
+            <td class="px-4 py-3 text-center">${{this.price}}</td>
+            <td class="px-4 py-3 text-center">{{this.quantity}}</td>
+            <td class="px-4 py-3 text-center">${{multiply this.price this.quantity}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{/each}}
+
+</div>
+
+{{> footer }}
+
+<script src="/css/index.css"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<script src="/javascript/orders.js"></script>
