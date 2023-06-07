@@ -17,17 +17,13 @@ Just finished some heavy updates. Now will implement payments and order history 
 
 ## Technologies
 
-- Server Side Rendering
+- Server Side Templating(Handlebars)
 
 - MySQL
 
 - NodeJs
 
 - Express
-
-- HandlebarsJs
-
-- Express-Handlebars
 
 - Server: Express Node.js
 
